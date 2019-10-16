@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>EDP SACC</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="css/all.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="css/tail.select-default.css"/>
+	<link type="text/css" rel="stylesheet" href="css/index.css"/>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap4-toggle.css">
+	<link type="text/css" rel="stylesheet" href="css/Chart.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap-table.css">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark shadow">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	    <span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand mr-auto px-2" href="#">
+		<img src="img/logo_EDP.svg" alt="Logo" style="width:60px;"/>
+	</a>
+	<a class="navbar-brand text-wrap" href="#">SISTEMA DE ANÁLISE DE CURVA DE CONSUMO</a>
+	<!-- Toggler/collapsibe Button -->
+	
+	
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+		      <a class="nav-link" href="#">Daniel Lavino</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="#">Logout</a>
+		    </li>
+		</ul>
+	</div>
+	
+</nav> 
+
+<div class="row no-gutters">
+  	<div class="col-md-12 col-lg-4">
+  		<div class="card m-3 shadow tab-content">
+			<div class="card-header">
+				<ul class="nav nav-tabs">
+				  <li class="nav-item">
+				    <a class="nav-link active" data-toggle="tab" href="#inputInstalacao">ÚNICA</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#inputLista">LISTA</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#inputArquivo">ARQUIVO</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="card-body tab-pane container active" id="inputInstalacao">
+				<input type="text" name="inst" class="form-control form-control-lg" placeholder="Número da Instalação" pattern="[\d]{2,10}" title="A instalação deve conter apenas números" required>
+			</div>
+			<div class="card-body tab-pane container fade" id="inputLista">
+				<div class="input-group input-group-lg mb-3">
+					<textarea class="form-control form-control-lg" placeholder="Ex.: &#10;0000000000&#10;0000000000" rows="4" required></textarea>
+				</div>
+			</div>
+			<div class="card-body tab-pane container fade" id="inputArquivo">
+				<div class="input-group input-group-lg mb-3">
+					<input type="text" name="arq" class="form-control" readonly placeholder="Arquivo..." title="Nome do arquivo" required>
+					<div class="input-group-append">
+						<label class="btn btn-primary"> Procurar... <input type="file" hidden></label>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<label class="checkbox">
+				  <input type="checkbox" data-toggle="toggle" data-onstyle="primary" data-style="mr-2">Aplicar Filtros
+				</label>
+				<button class="btn btn-danger form-control form-control-lg btn-lg">Carregar</button>
+			</div>
+		</div>
+  	</div>
+  	<div class="col-md-12 col-lg-8">
+  		<div class="card m-3 shadow">
+			<div class="card-header navbar navbar-light">
+				<h4 class="card-title">Filtros</h4>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".card-filtros">
+				    <span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+			<div class="card-body collapse show card-filtros" style="line-height: 0">
+				<div class="row no-gutters">
+					<div class="col-md-12 col-lg-4">
+						<div class="card mb-2">
+							<div class="card-header">Filtro 1</div>
+							<div class="card-body p-0">
+								<select multiple></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<div class="card mb-2">
+							<div class="card-header">Filtro 2</div>
+							<div class="card-body p-0">
+								<select multiple></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<div class="card mb-2">
+							<div class="card-header">Filtro 3</div>
+							<div class="card-body p-0">
+								<select multiple></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<div class="card mb-2">
+							<div class="card-header">Filtro 4</div>
+							<div class="card-body p-0">
+								<select multiple></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<div class="card mb-2">
+							<div class="card-header">Filtro 5</div>
+							<div class="card-body p-0">
+								<select multiple></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<div class="card mb-2">
+							<div class="card-header">Filtro 6</div>
+							<div class="card-body p-0">
+								<select multiple></select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer collapse show card-filtros">
+				<div class="row no-gutters">
+					<div class="col-md-12 col-lg-3 ml-auto">
+						<button class="btn btn-danger form-control form-control-lg btn-lg">Filtrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</div>
+  	<div class="col-md-12 col-lg-8">
+  		<div class="card m-3 shadow tab-content">
+			<div class="card-header">
+				<ul class="nav nav-tabs">
+				  <li class="nav-item">
+				    <a class="nav-link active" data-toggle="tab" href="#tblAlvos">RESULTADOS</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#tblFila">ALVOS</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="card-body table-responsive tab-pane container active" id="tblAlvos">
+				<div class="select">
+				  <select class="form-control" id="locale">
+				    <option value="en-US">en-US</option>
+				    <option value="pl-PL">pl-PL</option>
+				    <option value="pt-BR" selected>pt-BR</option>
+				  </select>
+				</div>
+				<div id="toolbar">
+				  <button id="remove" class="btn btn-danger" disabled>
+				    <i class="glyphicon glyphicon-remove"></i> Delete
+				  </button>
+				</div>
+				<table
+				  id="table"
+				  data-toolbar="#toolbar"
+				  data-search="true"
+				  data-show-refresh="true"
+				  data-show-toggle="true"
+				  data-show-fullscreen="true"
+				  data-show-columns="true"
+				  data-detail-view="true"
+				  data-show-export="true"
+				  data-click-to-select="true"
+				  data-detail-formatter="detailFormatter"
+				  data-minimum-count-columns="2"
+				  data-show-pagination-switch="true"
+				  data-pagination="true"
+				  data-id-field="id"
+				  data-page-list="[10, 25, 50, 100, all]"
+				  data-show-footer="true"
+				  data-side-pagination="server"
+				  data-url="https://examples.wenzhixin.net.cn/examples/bootstrap_table/data"
+				  data-mobile-responsive="true"
+				  data-response-handler="responseHandler">
+				</table>
+			</div>
+			<div class="card-body tab-pane container fade" id="tblFila">alvos</div>
+			<div class="card-footer">Footer</div>
+		</div>
+  	</div>
+  	<div class="col-md-12 col-lg-4">
+  		<div class="card m-3 shadow">
+			<div class="card-header">
+				<h4 class="card-title">Gráfico</h4>
+			</div>
+			<div class="card-body">
+				<canvas id="myChart"></canvas>
+			</div>
+			<div class="card-footer">Footer</div>
+		</div>
+  	</div>
+</div>
+
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/tail.select-full.js"></script>
+<script type="text/javascript" src="js/bootstrap4-toggle.js"></script>
+<script type="text/javascript" src="js/Chart.bundle.js"></script>
+<script type="text/javascript" src="js/tableExport.js"></script>
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-locale-all.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-mobile.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-export.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+
+</body>
+</html> 

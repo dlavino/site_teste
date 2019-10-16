@@ -1,0 +1,7 @@
+body {
+    overflow-x:hidden;
+}
+
+.hiddenRow {
+    padding: 0 !important;
+}
